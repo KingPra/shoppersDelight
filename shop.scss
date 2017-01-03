@@ -1,0 +1,127 @@
+@import 'node_modules/foundation-sites/scss/foundation';
+@include foundation-global-styles;
+@include foundation-grid;
+
+//sass variables
+$med_screen: 600px;
+$lg_screen: 1000px; 
+
+body {
+    @include grid-row();
+}
+
+
+header {
+    background-color: lightslategray;
+    padding: 50px 0;
+
+
+    button {
+        float: right;
+        margin: 10px 10px;
+        width: 75px;
+    }
+
+    h1 {
+
+        text-align: center;
+    }
+}
+
+section div {
+    @include grid-column(12);
+    text-align: center;
+    display: block; 
+    padding-top: 20px;
+
+
+    img {
+        width: 200px;
+
+    }
+
+    p {
+    
+    margin: 0 auto;
+}
+    
+    @include breakpoint($med_screen){
+    @include grid-column(6);
+
+    }
+
+    @include breakpoint($lg_screen) {
+    @include grid-column(4); 
+    text-align: center;
+    display: inline-block;  
+    padding-top: 20px;
+    
+    }
+}
+
+.price {
+    font-weight: 900;
+}
+
+.buyButton {
+    border: 1px solid black;
+    border-radius: 1px;
+    width: 100px;
+    height: 30px;
+    background-color: grey;
+}
+
+footer {
+    margin-top: 20px;
+
+    p {
+        margin: 0 auto;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+/*----- Top Level -----*/
+.menu section {
+    float: right;
+    display: inline-block;
+    position: relative;
+    font-size: 19px;
+
+    li {
+    margin: 0px;
+    list-style: none;
+    color: white;
+    }
+}
+ 
+/*----- Bottom Level -----*/
+.sub-cart {
+    width: 160%;
+    padding: 5px 0;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    z-index: -1;
+    opacity: 0;
+    transition:opacity linear 0.15s;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    background: #2e2728;
+}
+
+//dropdown on :hover
+.menu div:hover .sub-cart {
+    z-index: 1;
+    opacity: 1;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.unhidden {
+    display: block;
+}

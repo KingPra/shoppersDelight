@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <link rel="stylesheet" href="shop.css">
+    <script src="shop.js"></script>
+    <title>Shoppers Delight</title>
+
+    <!--parts display mustache-->
+    <script id="wheels" type="x-mustache-template">
+        <img src="{{pic}}"/>
+        <p>{{make}}</p>
+        <p>{{size}}</p>
+        <p class="price">${{price}}</p>
+        <button class="buyButton" value="{{buy}}" id="{{id}}">Add to Cart</buttton>
+        </script>
+
+<!--shopping cart list mustache-->
+<script id="cartItemList" type="x-mustache-template">
+        <li>{{itemName}}</li>
+        </script>
+
+<!--subtotal mustache -->
+<script id="carted" type="x-mustache-template">
+            <li>{{itemInCart}}</li>
+            <p>subtotal ${{sub}}</p>
+            <p>tax ${{taxTotal}}</p>
+            <p>total ${{total}}</p>
+        </script>
+</head>
+
+
+<body>
+    <header>
+        <div>
+            <h1>Shoppers Delight</h1>
+            
+            <div id="dropdown">
+                <ul id="cartContents">
+                </ul>
+                <!--<ul id="shoppingCart">
+                    <li></li>
+                </ul>-->
+            </div>
+        </div>
+            <div class="menu">
+
+                        <section>
+                        <button><img src="/Users/kingpra/Desktop/Homework/holidayBreak/shoppersDelight/resources/cart-36-32.ico" />
+                        </button>
+                        <ul class="sub-cart">
+                        <li>tste</li>
+                        </ul>
+                        </section>
+
+            </div>
+
+
+    </header>
+<main>
+    <!--parts display prints out here-->
+    <section class="parts"></section>
+    <!--subtotal prints out here-->
+    <!--<ul id="shoppingCart">
+        <li></li>
+    </ul>-->
+</main>
+<footer>
+</footer>
+</body>
+
+</html>
